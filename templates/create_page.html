@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <!--Center the div-->
+        <div class = "jumbotron" style = "height:100%; margin:auto; width:50%">
+            <h3 class = "display-4">Moviews</h3>
+            <p class ="lead">Add movies you want to rate!</p>
+
+            <div>
+                <!--Submission Form-->
+                <form action = "{{ request.path }}" method = "POST">
+                    <div class = "form-group">
+                        <label>Title</label><br>
+                        <input class = "form-control" type = "text" name = "title" value="{{movie.title}}"/><br>
+                    </div>
+
+                    <div class = "form-group">
+                        <label>Rating</label><br>
+
+                        <select name = "rating" style = "width: 100px;">
+                            <!--Set Default Value to the movie rating-->
+                            <option value = "{{movie.rating}}" selected hidden>{{movie.rating}}</option>
+                            {% for i in range(1, 6) %}
+                                <option value = "{{i}}">{{i|string}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class = "form-group">
+                        <label>Review Text</label><br>
+                        <textarea rows="6" class = "form-control" name = "reviewText">{{movie.text}}</textarea><br>
+                    </div>
+
+                    <button type = "submit" class="btn btn-primary mv-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
