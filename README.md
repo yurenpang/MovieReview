@@ -50,10 +50,11 @@ Make sure you have the latest version of Python 3 installed on your computer
 
 * The Main Page 
 
-![Home page of the website](image/mainpage)
+![Home page of the website](image/mainpage.PNG)
 
 * The edit review page. Note that this page shares the same template.
-![Movie Review Page](image/movie)
+
+![Movie Review Page](image/movie.PNG)
 
 * If the user clicks on a movie title, a page is shown that contains the review text in addition to the title and the rating. The user can click a button or link to return to the list of reviews.
  
